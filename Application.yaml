@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: project-k8s-deployment
 spec:
-  replicas: 3 
+  replicas: 1
   selector:
     matchLabels:
       app: project-k8s
@@ -24,7 +24,7 @@ kind: Service
 metadata:
   name: project-k8s-service
 spec:
-  type: LoadBalancer
+  type: NodePort
   selector:
     app: project-k8s
   ports:
